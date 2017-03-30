@@ -2,12 +2,11 @@
 
 namespace SA\Http\Controllers\Api;
 
-
-use SA\Http\Requests\CategoryRequest;
-use SA\Http\Requests\CategoryUpdateRequest;
-use SA\Repositories\CategoryRepository;
 use SA\Http\Controllers\Controller;
-
+//use SA\Http\Controllers\Response;
+use SA\Http\Requests\CategoryRequest;
+//use SA\Http\Requests\CategoryUpdateRequest;
+use SA\Repositories\CategoryRepository;
 
 
 class CategoriesController extends Controller
@@ -21,6 +20,7 @@ class CategoriesController extends Controller
     public function __construct(CategoryRepository $repository)
     {
         $this->repository = $repository;
+        $this->repository->applyMultitenancy();
     }
 
 
@@ -68,7 +68,7 @@ class CategoriesController extends Controller
      * @param  string $id
      * @return Response
      */
-    public function update(CategoryUpdateRequest $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
         $category = $this->repository->update($request->all(), $id);
         return response()->json($category, 200);
@@ -86,12 +86,10 @@ class CategoriesController extends Controller
     {
         $deleted = $this->repository->delete($id);
 
-        if (request()->wantsJson()) {
-
-            return response()->json([
-                'message' => 'Category deleted.',
-                'deleted' => $deleted,
-            ]);
+        if ($deleted) {
+            return response()->json([], 204);
+        }else{
+            return response()->json(['error' => 'Resource can not b deleted'], 500);
         }
 
         return redirect()->back()->with('message', 'Category deleted.');

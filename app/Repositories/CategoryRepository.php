@@ -8,7 +8,7 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  * Interface CategoryRepository
  * @package namespace SA\Repositories;
  */
-interface CategoryRepository extends RepositoryInterface
+interface CategoryRepository extends RepositoryInterface, RepositoryMultitenancyInterface
 {
     //
 }
