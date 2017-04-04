@@ -38,6 +38,8 @@ class ServiceProvider extends BaseServiceProvider
         } else {
             $this->publishes([$this->configPath() => config_path('cors.php')]);
 
+
+            $this->app['router']->aliasMiddleware('cors', HandleCors::class);
             /** @var \Illuminate\Foundation\Http\Kernel $kernel */
             $kernel = $this->app->make(Kernel::class);
 

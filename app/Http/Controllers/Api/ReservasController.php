@@ -2,23 +2,24 @@
 
 namespace SA\Http\Controllers\Api;
 
+use Illuminate\Http\Request;
+
+use SA\Http\Requests;
+use SA\Http\Requests\ReservaRequest;
 use SA\Http\Controllers\Controller;
-//use SA\Http\Controllers\Response;
-use SA\Http\Requests\CategoryRequest;
-//use SA\Http\Requests\CategoryUpdateRequest;
-use SA\Repositories\CategoryRepository;
-use SA\Models\User;
+use SA\Repositories\ReservaRepository;
 
 
-class CategoriesController extends Controller
+
+class ReservasController extends Controller
 {
 
     /**
-     * @var CategoryRepository
+     * @var ReservaRepository
      */
     protected $repository;
 
-    public function __construct(CategoryRepository $repository)
+    public function __construct(ReservaRepository $repository)
     {
         $this->repository = $repository;
         $this->repository->applyMultitenancy();
@@ -38,14 +39,15 @@ class CategoriesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  CategoryRequest $request
+     * @param  ReservaCreateRequest $request
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoryRequest $request)
+    public function store(ReservaRequest $request)
     {
-        $category = $this->repository->create($request->all());
-        return response()->json($category, 201);
+
+        $reserva = $this->repository->create($request->all());
+        return response()->json($reserva, 201);
     }
 
 
@@ -61,18 +63,19 @@ class CategoriesController extends Controller
         return $this->repository->find($id); //Esse find correspondente a findOrFail()
     }
 
-
     /**
      * Update the specified resource in storage.
      *
-     * @param CategoryRequest|CategoryUpdateRequest $request
-     * @param  string $id
+     * @param  ReservaUpdateRequest $request
+     * @param  string            $id
+     *
      * @return Response
      */
-    public function update(CategoryRequest $request, $id)
+    public function update(ReservaUpdateRequest $request, $id)
     {
-        $category = $this->repository->update($request->all(), $id);
-        return response()->json($category, 200);
+
+        $reserva = $this->repository->update($request->all(), $id);
+        return response()->json($reserva, 200);
     }
 
 
@@ -93,6 +96,12 @@ class CategoriesController extends Controller
             return response()->json(['error' => 'Resource can not b deleted'], 500);
         }
 
-        return redirect()->back()->with('message', 'Category deleted.');
+        return redirect()->back()->with('message', 'Reserva deleted.');
+    }
+
+    //AQUI EU TESTARIA O METODO QUE FIZ NO ReservaRepositoryEloquent
+    public function getInadimplencia()
+    {
+        return $this->repository->getInadimplencia();
     }
 }

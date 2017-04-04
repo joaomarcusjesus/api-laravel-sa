@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +24,7 @@ Route::group(['middleware' => 'cors'], function(){
         Route::resource('categories', 'Api\CategoriesController', ['except' => ['create', 'edit']]);
         Route::get('bill_pays/total', 'Api\BillPaysController@calculateTotal');
         Route::resource('bill_pays', 'Api\BillPaysController', ['except' => ['create', 'edit']]);
+        Route::resource('reservas', 'Api\ReservasController', ['except' => ['create', 'edit']]);
     });
 
 });

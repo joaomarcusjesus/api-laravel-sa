@@ -42,3 +42,17 @@ $factory->define(SA\Models\BillPay::class, function (Faker\Generator $faker) {
         'user_id' => rand(1,21)
     ];
 });
+
+$factory->define(SA\Models\Reserva::class, function (Faker\Generator $faker) {
+
+    return [
+        'id' => rand(1,5),
+        'dt_reserva' => $faker->date(),
+        'hr_inicio' => $faker->time(),
+        'hr_fim' => $faker->time(),
+        'id_numero_imovel' => rand(1,5),
+        'id_bloco' => rand(1,1),
+        'id_cadastro_reserva_area_comum' => rand(1,2),
+        'id_area_pai' => rand(1,1)
+    ];
+});
