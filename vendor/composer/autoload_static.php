@@ -360,14 +360,21 @@ class ComposerStaticInita234c70101471dce16c8732ca9f5a47c
     );
 
     public static $classMap = array (
+        'AreaComumTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AreaComumTableSeeder.php',
+        'AreaComumsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AreaComumsTableSeeder.php',
+        'AreaPaisTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AreaPaisTableSeeder.php',
         'BillPaysTableSeeder' => __DIR__ . '/../..' . '/database/seeds/BillPaysTableSeeder.php',
         'CategoriesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CategoriesTableSeeder.php',
         'CorsKernel' => __DIR__ . '/..' . '/barryvdh/laravel-cors/tests/CorsKernel.php',
         'CorsServiceTest' => __DIR__ . '/..' . '/barryvdh/laravel-cors/tests/CorsServiceTest.php',
+        'CreateAreaComumsTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_04_183142_create_area_comums_table.php',
+        'CreateAreaPaisTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_04_185719_create_area_pais_table.php',
         'CreateBillPaysTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_30_131724_create_bill_pays_table.php',
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_29_161754_create_categories_table.php',
+        'CreateInadimplentesTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_04_171137_create_inadimplentes_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateReservasTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_03_191940_create_reservas_table.php',
+        'CreateTipoAreasTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_04_185734_create_tipo_areas_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
@@ -443,6 +450,7 @@ class ComposerStaticInita234c70101471dce16c8732ca9f5a47c
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+        'InadimplentesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/InadimplentesTableSeeder.php',
         'MockApp' => __DIR__ . '/..' . '/barryvdh/laravel-cors/tests/CorsServiceTest.php',
         'OriginMatcherTest' => __DIR__ . '/..' . '/barryvdh/laravel-cors/tests/OriginMatcherTest.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
@@ -825,7 +833,7 @@ class ComposerStaticInita234c70101471dce16c8732ca9f5a47c
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PreflightTest' => __DIR__ . '/..' . '/barryvdh/laravel-cors/tests/PreflightTest.php',
-        'ReservaTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ReservaTableSeeder.php',
+        'ReservasTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ReservasTableSeeder.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',
@@ -907,6 +915,7 @@ class ComposerStaticInita234c70101471dce16c8732ca9f5a47c
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'TestCase' => __DIR__ . '/..' . '/barryvdh/laravel-cors/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'TipoAreasTableSeeder' => __DIR__ . '/../..' . '/database/seeds/TipoAreasTableSeeder.php',
         'UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeds/UsersTableSeeder.php',
     );
 

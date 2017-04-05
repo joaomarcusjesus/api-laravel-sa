@@ -25,6 +25,10 @@ Route::group(['middleware' => 'cors'], function(){
         Route::get('bill_pays/total', 'Api\BillPaysController@calculateTotal');
         Route::resource('bill_pays', 'Api\BillPaysController', ['except' => ['create', 'edit']]);
         Route::resource('reservas', 'Api\ReservasController', ['except' => ['create', 'edit']]);
+        Route::resource('inadimplentes', 'Api\InadimplentesController', ['except' => ['create', 'edit']]);
+        Route::resource('areas_comuns', 'Api\AreaComumsController', ['except' => ['create', 'edit']]);
+        Route::resource('tipo_areas', 'Api\TipoAreasController', ['except' => ['create', 'edit']]);
+        Route::resource('area_pais', 'Api\AreaPaisController', ['except' => ['create', 'edit']]);
     });
 
 });
